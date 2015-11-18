@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}{% load i18n %}
+{% block title %}Customers{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <h2>Customers</h2>
+
+    <div class="list-group">
+        {% for customer in customer_list %}
+          <a href="{% url 'customers:detail' customer.pk %}" class="list-group-item">
+            <h4 class="list-group-item-heading">{{ customer }}</h4>
+          </a>
+        {% endfor %}
+
+    </div>
+
+</div>
+{% endblock content %}

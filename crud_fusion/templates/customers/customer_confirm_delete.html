@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Create/Update Customer{% endblock %}
+
+{% block content %}
+    <h1>Delete Customer</h1>
+    <form class="form-horizontal" method="post" action=".">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <div class="control-group">
+          <div class="controls">
+            <p>Are you sure you want to delete customer: {{ customer }}?</p>
+            <button type="submit" class="btn btn-primary">Confirm</button>
+          </div>
+        </div>
+    </form>
+{% endblock %}
